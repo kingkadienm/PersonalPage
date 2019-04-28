@@ -17,16 +17,16 @@ module.exports = {
     sidebar: {
       '/android/':[
       '',
-      ]
+      ],
       '/flutter/':[
       '',
-      ]
+      ],
       '/python/':[
       '',
-      ]
+      ],
       '/goland/':[
       '',
-      ]
+      ],
       '/vue/': [
         '',
         'about'
