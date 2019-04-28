@@ -15,6 +15,18 @@ module.exports = {
       { text: 'Github', link: 'https://github.com/kingkadienm' },
     ],
     sidebar: {
+      '/android/':[
+      '',
+      ]
+      '/flutter/':[
+      '',
+      ]
+      '/python/':[
+      '',
+      ]
+      '/goland/':[
+      '',
+      ]
       '/vue/': [
         '',
         'about'
