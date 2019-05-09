@@ -1,1 +1,1 @@
-# This is Vue page.
+# Hello Vue!

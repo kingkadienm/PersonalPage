@@ -1,1 +1,1 @@
-# This is React page.
+# Hello React

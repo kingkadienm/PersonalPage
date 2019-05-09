@@ -1,1 +1,1 @@
-# This is a react page.
+# React 初始化
