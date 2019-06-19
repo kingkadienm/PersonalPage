@@ -7,11 +7,11 @@ module.exports = {
       { text: 'Flutter', link: '/flutter/' },
       { text: 'Python', link: '/python/' },
       { text: 'Goland', link: '/goland/' },
-      { text: 'Vue', link: '/vue/' },
-      { text: 'React', link: '/react/' },
-      { text: 'JS', link: '/js/' },
-      { text: 'CSS', link: '/css/' },
-      { text: '其他', link: '/other/' },
+      // { text: 'Vue', link: '/vue/' },
+      // { text: 'React', link: '/react/' },
+      // { text: 'JS', link: '/js/' },
+      // { text: 'CSS', link: '/css/' },
+      // { text: '其他', link: '/other/' },
       { text: 'Github', link: 'https://github.com/kingkadienm' },
     ],
     sidebar: {
@@ -27,24 +27,24 @@ module.exports = {
       '/goland/':[
       '',
       ],
-      '/vue/': [
-        '',
-        'about'
-      ],
-      '/react/': [
-        '',
-        'react'
-      ],
-      '/js/': [
-        ''
-      ],
-      '/css/': [
-        ''
-      ],
-      '/other/': [
-        '',
-        'prettier'
-      ]
+      // '/vue/': [
+      //   '',
+      //   'about'
+      // ],
+      // '/react/': [
+      //   '',
+      //   'react'
+      // ],
+      // '/js/': [
+      //   ''
+      // ],
+      // '/css/': [
+      //   ''
+      // ],
+      // '/other/': [
+      //   '',
+      //   'prettier'
+      // ]
     }
   },
   markdown: {
