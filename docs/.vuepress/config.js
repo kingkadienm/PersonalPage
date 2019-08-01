@@ -23,8 +23,8 @@ module.exports = {
             ],
             '/flutter/': [
                 '',
-                'Android嵌套Flutter(上)',
-                'Android嵌套Flutter(下)'
+                'Flutter2Android_1',
+                'Flutter2Android_2'
             ],
             '/python/': [
                 '',
