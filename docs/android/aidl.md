@@ -3,14 +3,14 @@
 
 项目目录
 
-![photo](/image/Snipaste_2019-07-31_16-38-02.png)
+![屏幕默认坐标系示例](https://github.com/kingkadienm/PersonalPage/blob/master/docs/.vuepress/image/Snipaste_2019-07-31_16-38-02.png)
 
 分为了两个App一个lib依赖， 其中aidl文件、实体类、和服务写在aidl_library中，然后oneApp和twoApp分别依赖此lib。下面开始仔细讲讲其中的使用方式。先从AIDL文件说起
 
 * AIDL文件 
 
 AIDL接口传递的主要是一个自定义类型User，所以先创建User文件，需要实现序列化
-```User.java
+```java
 package com.wangzs.aidl_library;
 
 import android.os.Parcel;
@@ -315,9 +315,9 @@ App2的数据已经发送了, 那么我们回到App1中接收数据，接收数�
 
 再总结一下数据传递时容易发生的坑
 
-目标Activity要exported=true (建议使用uri方式)
-Action是注册Service时定义的
-不管在哪个App绑定service, intent的Package一定是发送数据端的包名。
-bindService返回true时多检查action和package。
+* 目标Activity要exported=true (建议使用uri方式)
+* Action是注册Service时定义的
+* 不管在哪个App绑定service, intent的Package一定是发送数据端的包名。
+* bindService返回true时多检查action和package。
 
 [Demo地址](https://github.com/kingkadienm/AndroidAIDL)
