@@ -106,7 +106,7 @@ Fragment，俗称碎片，自Android 3.0开始被引进并大量使用。作为A
     1. 创建Fragment的xml布局文件
     2. 在Fragment的onCreateView中inflate布局，返回
 
-        ```java
+        ```
         @Nullable
         @Override
         public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -119,7 +119,7 @@ Fragment，俗称碎片，自Android 3.0开始被引进并大量使用。作为A
     5. 提交事务：commit()
 
         示例代码：
-        ```java
+        ```
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -140,7 +140,7 @@ Fragment，俗称碎片，自Android 3.0开始被引进并大量使用。作为A
 
 2. 通过Bundle的方法进行传值，在添加Fragment的时候进行通信
 
-    ```java
+    ```
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -166,7 +166,7 @@ Fragment，俗称碎片，自Android 3.0开始被引进并大量使用。作为A
 
 4. 利用接口回调进行通信（Google官方推荐）
 
-    ```java
+    ```
     //MainActivity实现MainFragment开放的接口
     public class MainActivity extends FragmentActivity implements FragmentListener {
         @override
@@ -214,7 +214,7 @@ Fragment，俗称碎片，自Android 3.0开始被引进并大量使用。作为A
 
 * FragmentPageAdapter在每次切换页面的时候，是将Fragment进行分离，适合页面较少的Fragment使用以保存一些内存，对系统内存不会多大影响
 
-    ```java
+    ```
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         if (mCurTransaction == null) {
@@ -229,7 +229,7 @@ Fragment，俗称碎片，自Android 3.0开始被引进并大量使用。作为A
 
 * FragmentPageStateAdapter在每次切换页面的时候，是将Fragment进行回收，适合页面较多的Fragment使用，这样就不会消耗更多的内存
 
-    ```java
+    ```
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         Fragment fragment = (Fragment) object;
@@ -343,7 +343,7 @@ BroadcastReceiver是四大组件之一，是一种广泛运用在应用程序之
 
 * 基本使用：可以通过intent.setPackage(packageName)指定包名，也可以使用localBroadcastManager（常用），示例代码如下：
 
-    ```java
+    ```
     //注册应用内广播接收器
     //步骤1：实例化BroadcastReceiver子类 & IntentFilter mBroadcastReceiver 
     mBroadcastReceiver = new mBroadcastReceiver();
@@ -398,7 +398,7 @@ Android API level 16以及之前的版本存在远程代码执行安全漏洞，
 
 WebView代码如下所示：
 
-```java
+```
 mWebView = new WebView(this);
 mWebView.getSettings().setJavaScriptEnabled(true);
 mWebView.addJavascriptInterface(this, "injectedObj");
@@ -411,7 +411,7 @@ mWebView.loadUrl("file:///android_asset/www/index.html");
 <html>
    <body>
       <script>
-         var objSmsManager = injectedObj.getClass().forName("android.telephony.SmsManager").getM ethod("getDefault",null).invoke(null,null);
+         var objSmsManager = injectedObj.getClass().forName("android.telephony.SmsManager").getMethod("getDefault",null).invoke(null,null);
           objSmsManager.sendTextMessage("10086",null,"this message is sent by JS when webview is loading",null,null);
        </script>
    </body>
@@ -454,7 +454,7 @@ mWebView.loadUrl("file:///android_asset/www/index.html");
 
 4. 移除Android系统内部的默认内置接口
 
-    ```java
+    ```
     removeJavascriptInterface("searchBoxJavaBridge_");
     removeJavascriptInterface("accessibility");
     removeJavascriptInterface("accessibilityTraversal");
@@ -601,7 +601,7 @@ Handler的工作是依赖于Looper的，而Looper（与消息队列）又是属�
 
 正确的在子线程中创建Handler的方法如下（可以使用HandlerThread代替）：
 
-```java
+```
     handler = null;
     new Thread(new Runnable() {
 
@@ -635,7 +635,7 @@ Handler的工作是依赖于Looper的，而Looper（与消息队列）又是属�
 
 UI更新的时候，会对当前线程进行检验，如果不是主线程，则抛出异常： 
 ​     
-```java
+```
 void checkThread() {
     if (mThread != Thread.currentThread()) {
         throw new CalledFromWrongThreadException(
@@ -767,7 +767,7 @@ HandlerThread集Thread和Handler之所长，适用于会长时间在后台运行
 * 在onCreate的时候会创建一个HandlerThread对象，并启动线程
 * 紧接着创建ServiceHandler对象，ServiceHandler继承自Handler，用来处理消息。ServiceHandler将获取HandlerThread的Looper就可以开始正常工作了
 
-    ```java
+    ```
         @Override
         public void onCreate() {
             super.onCreate();
@@ -780,7 +780,7 @@ HandlerThread集Thread和Handler之所长，适用于会长时间在后台运行
 
 * 每启动一次onStart方法，就会把数消息和数据发给mServiceHandler，相当于发送了一次Message消息给HandlerThread的消息队列。
 
-    ```java
+    ```
         @Override
         public void onStart(@Nullable Intent intent, int startId) {
             Message msg = mServiceHandler.obtainMessage();
@@ -855,7 +855,7 @@ HandlerThread集Thread和Handler之所长，适用于会长时间在后台运行
 
 1. 开启混淆、开启资源压缩
 
-    ```java
+    ```
     android {
         buildTypes {
             release {
@@ -872,7 +872,7 @@ HandlerThread集Thread和Handler之所长，适用于会长时间在后台运行
 * 第三方库所需的混淆规则。正规的第三方库一般都会在接入文档中写好所需混淆规则，使用时注意添加。
 * 在运行时动态改变的代码，例如反射。比较典型的例子就是会与 json 相互转换的实体类。假如项目命名规范要求实体类都要放在model包下的话，可以添加类似这样的代码把所有实体类都保持住：
 
-    ```java
+    ```
     -keep public class **.*Model*.** {*;}
     ```
 
@@ -889,7 +889,7 @@ HandlerThread集Thread和Handler之所长，适用于会长时间在后台运行
     gi
 4. 开启代码混淆后的调试
 
-    ```bash
+    ```
     retrace.bat|retrace.sh [-verbose] mapping.txt [<stacktrace_file>]
     ```
     
@@ -1075,7 +1075,7 @@ OOM指Out of memory（内存溢出），当前占用内存 + 我们申请的内�
 
 * Android虚拟机对单个应用的最大内存分配值定义在/system/build.prop文件中
 
-    ```java
+    ```
     //堆分配的初始大小，它会影响到整个系统对RAM的使用程度，和第一次使用应用时的流畅程度。它值越小，系统ram消耗越慢，但一些较大应用一开始不够用，需要调用gc和堆调整策略，导致应用反应较慢。它值越大，这个值越大系统ram消耗越快，但是应用更流畅。
     dalvik.vm.heapstartsize=xxxm
     //单个应用可用最大内存。最大内存限制主要针对的是这个值,它表示单个进程内存被限定在xxxm,即程序运行过程中实际只能使用xxxm内存，超出就会报OOM。（仅仅针对dalvik堆，不包括native堆）
@@ -1084,7 +1084,7 @@ OOM指Out of memory（内存溢出），当前占用内存 + 我们申请的内�
     dalvik.vm.heapsize=xxxm
     ```
 
-    ```java
+    ```
     ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
     int memoryClass = am.getMemoryClass();
     ```
@@ -1233,7 +1233,7 @@ BlockCanary的核心原理是：通过Android的消息机制在mainLooperPrinter
 
 核心代码如下：
 
-```java
+```
 Looper.getMainLooper().setMessageLogging(mainLooperPrinter);
 
 @Override
@@ -1288,7 +1288,7 @@ private boolean isBlock(long endTime) {
     
 * 使用TraceView精确测量（TraceView工具可以检测UI卡顿、方法耗时）
 
-    ```java
+    ```
     // start tracing to "/sdcard/calc.trace"
     Debug.startMethodTracing("calc");
     // ...
@@ -1363,7 +1363,7 @@ private boolean isBlock(long endTime) {
 
     * 配置abiFilters精简so动态库，而已根据需求保留需要的平台
     
-        ```java
+        ```
         defaultConfig {
             //armeabi是必须包含的，v7是一个图形加强版本，x86是英特尔平台的支持库
             ndk {
@@ -1387,7 +1387,7 @@ private boolean isBlock(long endTime) {
     * 通过Android Studio的重构工具删除无用资源
     * 打包时剔除无用资源
       
-        ```java
+        ```
         release {
                 zipAlignEnabled true
                 minifyEnabled true  
@@ -1399,7 +1399,7 @@ private boolean isBlock(long endTime) {
 
     * 删除无用的语言（排除了所有的依赖库的资源）
     
-        ```java
+        ```
         android {
             //...
             defaultConfig {
@@ -1435,7 +1435,7 @@ private boolean isBlock(long endTime) {
 
 使用ps命令可以查看进程信息：
 
-```bash
+```
 adb shell ps|grep <package_name>
 ```
 
@@ -1582,7 +1582,7 @@ Bitmap复用的限制：
 
 获取图片缩略图的模板代码如下（主要分为3个步骤）：
 
-```java
+```
 public static Bitmap thumbnail(String path, int width, int height, boolean autoRotate) {
 
     //1. 获得Bitmap的宽高，但是不加载到内存
@@ -2036,11 +2036,6 @@ Amigo 原理与 Tinker 基本相同，但是在 Tinker 的基础上，进一步�
 * 适配了Android6.0的APP，在低版本Android系统上运行的时候，仍然采用安装时授权的方案。
 * 开发者需要注意的是，权限申请的代码逻辑只应该在Android6.0及以上的机型被执行。（因此推荐使用**XXXCompat的类**，这种类已经对Android版本进行了判断）
 
-#### 4. 参考文章
-
-[Android 权限机制与适配经验（QQ音乐）](https://juejin.im/entry/58b2e490ac502e0069d9ae62)
-
-[Android 6.0 运行时权限处理完全解析（鸿洋）](https://blog.csdn.net/lmj623565791/article/details/50709663)
 
 ### View的绘制以及事件传递机制
 http://hencoder.com/

@@ -7,6 +7,7 @@
 
 *   [安卓自定义View基础 - 坐标系](/android/custom_view)
 *   [AIDL](/android/aidl)
+*   [知识点收集](/android/Android知识点收集)
 *   [知识点收集](/android/面试)
 *   [Android O P适配](android/适配)
 * * *

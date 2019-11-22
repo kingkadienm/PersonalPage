@@ -19,12 +19,16 @@ module.exports = {
                 '',
                 'custom_view',
                 'aidl',
+                'Android知识点收集',
                 '面试',
                 '适配'
             ],
             '/flutter/': [
                 '',
                 'Flutter2Android_1',
+                'Flutter2Android_2',
+                '2019-11-22',
+                '2019-11-22_2',
                 'Flutter2Android_2',
                 'Flutter_plugin'
             ],
