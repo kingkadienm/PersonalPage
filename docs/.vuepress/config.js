@@ -19,12 +19,14 @@ module.exports = {
                 '',
                 'custom_view',
                 'aidl',
-                '面试'
+                '面试',
+                '适配'
             ],
             '/flutter/': [
                 '',
                 'Flutter2Android_1',
-                'Flutter2Android_2'
+                'Flutter2Android_2',
+                'Flutter_plugin'
             ],
             '/python/': [
                 '',
