@@ -2,3 +2,5 @@
 .idea/
 node_modules/
 docs/.vuepress/dist/
+
+.user.ini
