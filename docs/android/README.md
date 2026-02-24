@@ -1,21 +1,22 @@
-# 导航
+# Android 开发笔记
 
- 
-记录开发过程中的点点滴滴
+记录Android开发过程中的技术要点和实践经验
 
-### 基础篇
+## 基础篇
 
-*   [安卓自定义View基础 - 坐标系](/android/custom_view)
+*   [自定义 View 与坐标系](/android/custom_view)
 *   [AIDL](/android/aidl)
-*   [知识点收集](/android/Android知识点收集)
-*   [知识点收集](/android/面试)
-*   [Android O P适配](android/适配)
-* * *
+*   [Android 知识点收集](/android/Android知识点收集)
+*   [Android 面试题大全](/android/android面试题大全)
+*   [Android 面试问答详解](/android/Android面试问答详解)
+*   [Java 与 Android](/android/java)
+*   [Android O/P 适配](/android/适配)
 
-### 进阶篇
+## 进阶篇
 
-后续补充
+*   [Android进阶](/android/android-advanced)
 
-* * *
-  
+## 实战篇
+
+*   [Android实战项目](/android/android-project)
   

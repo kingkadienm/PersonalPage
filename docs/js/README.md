@@ -1,4 +1,17 @@
-# Array方法
+# JavaScript 学习笔记
+
+JavaScript语言学习与实践
+
+## 基础
+
+*   [JavaScript基础](/js/js-basics)
+
+## 进阶
+
+*   [JavaScript进阶](/js/js-advanced)
+
+## Array方法
+
 日常工作中经常用到数组，感觉还是有点混乱，是时候总结一波了。
 
 ## concat
